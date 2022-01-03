@@ -4,9 +4,9 @@ import MenuSystem from './view/components/menuSystem';
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <MenuSystem />
-    </div>
+    </main>
   );
 }
 

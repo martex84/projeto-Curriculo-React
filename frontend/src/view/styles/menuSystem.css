@@ -1,0 +1,41 @@
+/**
+* 1.0 Containers Principais
+* 
+* Agrupamento dos Containers Principais
+*/
+#c-menuSystem {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c-secundario-menu {}
+
+/**
+* 1.0 Container Menu
+* 
+* Componentes do Container Menu
+*/
+
+.c-informacao-menu {
+    width: 400px;
+    padding: 10px;
+    background-color: #ffff;
+    border: 5px solid #D5431E;
+    border-radius: 20px;
+}
+
+/**
+* 3.0 Utilitários
+* 
+* Class utilitárias
+*/
+
+.displayMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
