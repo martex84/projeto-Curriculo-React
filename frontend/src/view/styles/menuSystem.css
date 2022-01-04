@@ -34,7 +34,7 @@
     }
 
     .c-secundario-menu__group:first-child {
-        margin: 0 0 10px 0
+        margin: 0;
     }
 }
 
@@ -82,6 +82,10 @@
     color: #fff;
 }
 
+.c-information-menu__input--personal-information {
+    margin-bottom: 25px;
+}
+
 .c-information-menu__input--text-area {
     padding-top: 5px;
     height: 100px;
@@ -101,6 +105,16 @@
     justify-content: space-evenly;
 }
 
+.c-secundario-menu__group:first-child .c-information-menu {
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width:818px) {
+    .c-secundario-menu__group:first-child .c-information-menu {
+        margin-bottom: 10px;
+    }
+}
+
 /**
 * 3.0 Buttom System
 * 
@@ -108,8 +122,8 @@
 */
 
 .button-system {
-    width: 80px;
-    height: 50px;
+    width: 120px;
+    height: 30px;
     background-color: #18335E;
     color: #ffff;
     border: 3px solid #18335E;
@@ -125,7 +139,6 @@
 
 .button-system--big {
     width: 300px;
-    height: 30px;
 }
 
 .button-system--center {
@@ -134,4 +147,5 @@
 
 .button-system--main {
     width: 200px;
+    height: 50px;
 }
