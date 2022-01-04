@@ -5,13 +5,38 @@
 */
 #c-menu-system {
     max-width: 800px;
+    padding: 20px;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
-.c-secundario-menu {}
+.c-menu-system__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.c-secundario-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.c-secundario-menu__group:first-child {
+    margin-right: 50px;
+}
+
+@media screen and (max-width:818px) {
+    .c-secundario-menu {
+        flex-direction: column;
+    }
+
+    .c-secundario-menu__group:first-child {
+        margin: 0 0 10px 0
+    }
+}
 
 /**
 * 2.0 Container Menu
@@ -20,14 +45,19 @@
 */
 
 .c-information-menu {
-    width: 400px;
+    width: 375px;
     padding: 10px;
+    margin-bottom: 10px;
     background-color: #ffff;
     border: 5px solid #D5431E;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.c-information-menu:last-child {
+    margin-bottom: 0;
 }
 
 .c-information-menu__title {
@@ -52,9 +82,23 @@
     color: #fff;
 }
 
+.c-information-menu__input--text-area {
+    padding-top: 5px;
+    height: 100px;
+    resize: none;
+}
+
 .c-information-menu__input::placeholder {
     color: #fff;
     opacity: 50%;
+}
+
+.c-information-menu-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
 /**
@@ -66,7 +110,6 @@
 .button-system {
     width: 80px;
     height: 50px;
-    margin: auto;
     background-color: #18335E;
     color: #ffff;
     border: 3px solid #18335E;
@@ -83,4 +126,12 @@
 .button-system--big {
     width: 300px;
     height: 30px;
+}
+
+.button-system--center {
+    margin: auto;
+}
+
+.button-system--main {
+    width: 200px;
 }
