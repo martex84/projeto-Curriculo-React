@@ -27,7 +27,7 @@ function App() {
   return (
     <main className="App">
       <MenuSystem />
-      <ListValues props={arrayListaDouble} nameList={'Habilidades'} />
+      <ListValues props={arrayListaDouble} nameList={'Habilidades'} styleMain={{ display: 'grid' }} />
     </main>
   );
 }

@@ -5,14 +5,18 @@ import "../../styles/listValues.css";
 
 function ListValues(object) {
 
-    const [styleMain, setStyleMain] = useState({ display: 'block' });
+    const [styleMain, setStyleMain] = useState(object.styleMain);
 
     const internalList = object.props;
 
+    function alterationStyleListValues() {
+        setStyleMain({ display: 'none' })
+    }
+
     return (
-        <div className="c-list-values" style={styleMain} >
+        <div className="c-list-values" aria-label='c-list-values' style={styleMain} >
             <div className="c-list-valuse__c-internal">
-                <button className="button-list-values button-list-values--head">
+                <button aria-label='closeButton' className="button-list-values button-list-values--head" onClick={() => alterationStyleListValues()}>
                     <MdClose />
                 </button>
                 <h2 className="c-list-values__title">

@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event'
 import { render, screen } from '@testing-library/react';
 import ListValues from '../view/components/ListValues'
 
@@ -45,4 +46,23 @@ describe('Test function in interface List Value', () => {
       expect(listItem).toBeInTheDocument();
     }
   });
+
+  test.only('Close componente', () => {
+    render(< ListValues props={arrayListaUnit} styleMain={{ display: 'grid' }} />)
+
+    let componenteMain = screen.getByLabelText(/c-list-values/i)
+
+    const buttonClose = screen.getByRole('button', { name: "closeButton" });
+
+    expect(componenteMain).toHaveStyle("display: grid")
+
+    expect(buttonClose).toBeInTheDocument();
+
+    userEvent.click(buttonClose);
+
+    componenteMain = screen.getByLabelText(/c-list-values/i)
+
+    expect(componenteMain).toHaveStyle("display: none")
+
+  })
 })
