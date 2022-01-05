@@ -2,11 +2,18 @@ import userEvent from '@testing-library/user-event'
 import { render, screen } from '@testing-library/react';
 
 import MenuSystem from '../view/components/MenuSystem';
+import database from '../services/database'
 
-describe('Test for componente Menu System', () => {
+describe.skip('Test for componente Menu System', () => {
+
+    const db = database;
 
     test.only('Close componente List Values', () => {
-        render(< MenuSystem />)
+        const returnValue = db.cursosRealizados;
+
+        render(< MenuSystem props={returnValue} />)
+
+        debugger;
 
         let componenteMain = screen.queryByLabelText(/c-list-values/i);
 
