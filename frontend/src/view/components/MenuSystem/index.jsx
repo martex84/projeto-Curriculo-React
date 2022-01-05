@@ -103,7 +103,7 @@ function MenuSystem() {
                             </label>
                             <textarea placeholder="Digite a experiência" className="c-information-menu__input c-information-menu__input--text-area" />
                             <div className="c-information-menu-button">
-                                <button className="button-system">Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -126,7 +126,7 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite o nome da instituição" className="c-information-menu__input" />
                             <div className="c-information-menu-button">
-                                <button className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite o nível do idioma" className="c-information-menu__input" />
                             <div className="c-information-menu-button">
-                                <button className="button-system">Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -160,7 +160,7 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite o tipo da habilidade" className="c-information-menu__input" />
                             <div className="c-information-menu-button">
-                                <button className="button-system">Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -179,7 +179,7 @@ function MenuSystem() {
                             </label>
                             <textarea placeholder="Digite a qualificação" className="c-information-menu__input c-information-menu__input--text-area" />
                             <div className="c-information-menu-button">
-                                <button className="button-system">Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
