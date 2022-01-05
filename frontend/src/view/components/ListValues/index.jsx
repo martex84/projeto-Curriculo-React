@@ -22,22 +22,27 @@ function ListValues(object) {
                 </h2>
                 <ul className="ul-list-internal">
                     {
-                        internalList.map((data, index) => {
-                            const arrayObjeto = Object.keys(data);
+                        Object.keys(internalList).map((data, index) => {
+                            const arrayObjeto = Object.keys(internalList[`${data}`]);
+
                             if (arrayObjeto.length === 2) {
+
+                                const listPropried = internalList[`${data}`];
+
+                                console.log(`${listPropried[`${arrayObjeto[0]}`]}`);
 
                                 return (
                                     <li key={index} aria-label="doubleList" className="ul-list-internal__list-item ul-list-iternernal__list-item--double">
                                         <div className="ul-list-internal__header">
                                             <label>
-                                                {data[`${arrayObjeto[0]}`]}
+                                                {listPropried[`${arrayObjeto[0]}`]}
                                             </label>
                                             <button className="button-list-values">
                                                 <MdDeleteForever />
                                             </button>
                                         </div>
                                         <p>
-                                            {data[`${arrayObjeto[1]}`]}
+                                            {listPropried[`${arrayObjeto[1]}`]}
                                         </p>
                                     </li>
                                 )
@@ -46,7 +51,7 @@ function ListValues(object) {
                             return (
                                 <li key={index} aria-label="unitList" className="ul-list-internal__list-item ul-list-iternernal__list-item--unit">
                                     <p>
-                                        {data[`${arrayObjeto[0]}`]}
+                                        {data[`${internalList[`${data}`]}`]}
                                     </p>
                                 </li>
                             )
