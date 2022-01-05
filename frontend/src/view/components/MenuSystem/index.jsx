@@ -1,6 +1,6 @@
 import "../../styles/menuSystem.css"
 
-function menuSystem() {
+function MenuSystem() {
     return (
         <section id="c-menu-system">
             <h1 className="c-menu-system__title">
@@ -155,4 +155,4 @@ function menuSystem() {
     )
 }
 
-export default menuSystem;
+export default MenuSystem;

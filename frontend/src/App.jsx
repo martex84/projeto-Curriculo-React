@@ -1,7 +1,7 @@
 import './view/styles/App.css';
 
-import MenuSystem from './view/components/menuSystem';
-import ListValues from './view/components/listValues';
+import MenuSystem from './view/components/MenuSystem';
+import ListValues from './view/components/ListValues';
 
 function App() {
 

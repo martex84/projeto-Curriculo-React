@@ -1,13 +1,16 @@
+import { useState } from 'react';
+import { MdDeleteForever, MdClose } from 'react-icons/md';
+
 import "../../styles/listValues.css";
 
-import { MdDeleteForever, MdClose } from 'react-icons/md'
+function ListValues(object) {
 
-function listValues(object) {
+    const [styleMain, setStyleMain] = useState({ display: 'block' });
 
     const internalList = object.props;
 
     return (
-        <div className="c-list-values">
+        <div className="c-list-values" style={styleMain} >
             <div className="c-list-valuse__c-internal">
                 <button className="button-list-values button-list-values--head">
                     <MdClose />
@@ -53,4 +56,4 @@ function listValues(object) {
     )
 }
 
-export default listValues;
+export default ListValues;

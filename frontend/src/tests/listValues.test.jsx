@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ListValues from '../view/components/listValues'
+import ListValues from '../view/components/ListValues'
 
 describe('Test function in interface List Value', () => {
   const arrayListaDouble = [
