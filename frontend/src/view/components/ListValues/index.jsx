@@ -1,20 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MdDeleteForever, MdClose } from 'react-icons/md';
 
 import "../../styles/listValues.css";
 
 function ListValues(object) {
 
-    const [styleMain, setStyleMain] = useState(object.styleMain);
-
     const internalList = object.props;
 
     function alterationStyleListValues() {
-        setStyleMain({ display: 'none' })
+        object.closeMenu();
     }
 
     return (
-        <div className="c-list-values" aria-label='c-list-values' style={styleMain} >
+        <div className="c-list-values" aria-label='c-list-values'>
             <div className="c-list-valuse__c-internal">
                 <button aria-label='closeButton' className="button-list-values button-list-values--head" onClick={() => alterationStyleListValues()}>
                     <MdClose />
