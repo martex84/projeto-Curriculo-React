@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../styles/menuSystem.css"
 
 import ListValues from "../ListValues";
+import { getCurso } from '../../../services/processDatabase'
 
 const arrayListaDouble = [
     {
@@ -27,10 +28,28 @@ const arrayListaDouble = [
 
 function MenuSystem() {
 
-    const [listValue, setListValue] = useState();
+    const [objetoReturnListValues, setObjetoReturnListValues] = useState();
     const [showListValues, setShowListValues] = useState(false);
 
-    function openListValues() {
+    function openListValues(tipoObjeto) {
+
+        switch (tipoObjeto) {
+
+            case "course":
+                const valueReturn = getCurso();
+
+                setObjetoReturnListValues({
+                    nameList: "Cursos Realizados",
+                    data: valueReturn
+                });
+
+                break;
+
+            default:
+                setObjetoReturnListValues(undefined);
+                break;
+        }
+
         setShowListValues(true);
     }
 
@@ -126,7 +145,7 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite o nome da instituição" className="c-information-menu__input" />
                             <div className="c-information-menu-button">
-                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues("course")}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -190,7 +209,7 @@ function MenuSystem() {
                     <button className="button-system button-system--main">Criar</button>
                 </div>
             </section>
-            {showListValues === true ? <ListValues props={arrayListaDouble} nameList={'Habilidades'} closeMenu={closeListValues} /> : null}
+            {showListValues === true ? <ListValues props={objetoReturnListValues.data} nameList={objetoReturnListValues.nameList} closeMenu={closeListValues} /> : null}
         </>
     )
 }
