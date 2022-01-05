@@ -1,9 +1,29 @@
 import database from "./database";
 
-function getCurso() {
+function getCourse() {
     return database.cursosRealizados;
 }
 
+function getQualification() {
+    return database.qualificacoesProfissionais;
+}
+
+function getExperience() {
+    return database.experienciasProfissionais;
+}
+
+function getLanguages() {
+    return database.idiomas;
+}
+
+function getAbility() {
+    return database.habilidades;
+}
+
 export {
-    getCurso
+    getCourse,
+    getAbility,
+    getExperience,
+    getLanguages,
+    getQualification
 }

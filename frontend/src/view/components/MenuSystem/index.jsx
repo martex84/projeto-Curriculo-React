@@ -3,28 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../styles/menuSystem.css"
 
 import ListValues from "../ListValues";
-import { getCurso } from '../../../services/processDatabase'
-
-const arrayListaDouble = [
-    {
-        nomeEmpresa: "EloGroup",
-        descricaoExperiencia: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum lacus eget neque viverra pellentesque. Morbi sollicitudin iaculis lacinia. Pellentesque ornare vehicula quam vitae mollis. Suspendisse porta risus eu ipsum imperdiet iaculis. \nNam id elit porttitor, venenatis lacus in, condimentum sapien. Nulla in aliquet nunc. Integer lacus justo, ullamcorper at dolor et, aliquet molestie odio. Suspendisse feugiat porttitor augue vitae maximus. Maecenas maximus consectetur vehicula. Proin blandit odio sed mauris facilisis, vel dignissim ipsum lobortis. Cras a ante est. Cras massa velit, efficitur eu accumsan vel, pretium sed tortor. Maecenas sit amet facilisis odio"
-    },
-    {
-        nomeEmpresa: "Academia da Força Aérea",
-        descricaoExperiencia: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum lacus eget neque viverra pellentesque. Morbi sollicitudin iaculis lacinia. Pellentesque ornare vehicula quam vitae mollis. Suspendisse porta risus eu ipsum imperdiet iaculis. \nNam id elit porttitor, venenatis lacus in, condimentum sapien. Nulla in aliquet nunc. Integer lacus justo, ullamcorper at dolor et, aliquet molestie odio. Suspendisse feugiat porttitor augue vitae maximus. Maecenas maximus consectetur vehicula. Proin blandit odio sed mauris facilisis, vel dignissim ipsum lobortis. Cras a ante est. Cras massa velit, efficitur eu accumsan vel, pretium sed tortor. Maecenas sit amet facilisis odio"
-    },
-    {
-        nomeEmpresa: "EloGroup",
-        descricaoExperiencia: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum lacus eget neque viverra pellentesque. Morbi sollicitudin iaculis lacinia. Pellentesque ornare vehicula quam vitae mollis. Suspendisse porta risus eu ipsum imperdiet iaculis. \nNam id elit porttitor, venenatis lacus in, condimentum sapien. Nulla in aliquet nunc. Integer lacus justo, ullamcorper at dolor et, aliquet molestie odio. Suspendisse feugiat porttitor augue vitae maximus. Maecenas maximus consectetur vehicula. Proin blandit odio sed mauris facilisis, vel dignissim ipsum lobortis. Cras a ante est. Cras massa velit, efficitur eu accumsan vel, pretium sed tortor. Maecenas sit amet facilisis odio"
-    },
-    {
-        nomeEmpresa: "Academia da Força Aérea",
-        descricaoExperiencia: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum lacus eget neque viverra pellentesque. Morbi sollicitudin iaculis lacinia. Pellentesque ornare vehicula quam vitae mollis. Suspendisse porta risus eu ipsum imperdiet iaculis. \nNam id elit porttitor, venenatis lacus in, condimentum sapien. Nulla in aliquet nunc. Integer lacus justo, ullamcorper at dolor et, aliquet molestie odio. Suspendisse feugiat porttitor augue vitae maximus. Maecenas maximus consectetur vehicula. Proin blandit odio sed mauris facilisis, vel dignissim ipsum lobortis. Cras a ante est. Cras massa velit, efficitur eu accumsan vel, pretium sed tortor. Maecenas sit amet facilisis odio"
-    }
-]
-
-
+import * as processDatabase from '../../../services/processDatabase'
 
 function MenuSystem() {
 
@@ -33,13 +12,55 @@ function MenuSystem() {
 
     function openListValues(tipoObjeto) {
 
+        let valueReturn;
+
         switch (tipoObjeto) {
 
             case "course":
-                const valueReturn = getCurso();
+                valueReturn = processDatabase.getCourse();
 
                 setObjetoReturnListValues({
                     nameList: "Cursos Realizados",
+                    data: valueReturn
+                });
+
+                break;
+
+            case "experience":
+                valueReturn = processDatabase.getExperience();
+
+                setObjetoReturnListValues({
+                    nameList: "Experiência Profissionais",
+                    data: valueReturn
+                });
+
+                break;
+
+            case "languages":
+                valueReturn = processDatabase.getLanguages();
+
+                setObjetoReturnListValues({
+                    nameList: "Idiomas Falados",
+                    data: valueReturn
+                });
+
+                break;
+
+            case "ability":
+                valueReturn = processDatabase.getAbility();
+
+                setObjetoReturnListValues({
+                    nameList: "Habilidades",
+                    data: valueReturn
+                });
+
+                break;
+
+            case "qualification":
+                valueReturn = processDatabase.getQualification();
+
+                setObjetoReturnListValues({
+                    nameList: "Qualificações Profissionais",
                     data: valueReturn
                 });
 
@@ -122,7 +143,7 @@ function MenuSystem() {
                             </label>
                             <textarea placeholder="Digite a experiência" className="c-information-menu__input c-information-menu__input--text-area" />
                             <div className="c-information-menu-button">
-                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('experience')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -164,7 +185,7 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite o nível do idioma" className="c-information-menu__input" />
                             <div className="c-information-menu-button">
-                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('languages')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -179,7 +200,7 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite o tipo da habilidade" className="c-information-menu__input" />
                             <div className="c-information-menu-button">
-                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('ability')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
@@ -198,7 +219,7 @@ function MenuSystem() {
                             </label>
                             <textarea placeholder="Digite a qualificação" className="c-information-menu__input c-information-menu__input--text-area" />
                             <div className="c-information-menu-button">
-                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues()}>Visualizar lista</button>
+                                <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('qualification')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
                             </div>
                         </div>
