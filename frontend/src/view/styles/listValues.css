@@ -13,13 +13,13 @@
 }
 
 .c-list-valuse__c-internal {
+    height: 100vh;
     max-width: 400px;
     padding: 20px;
     background-color: #fff;
     border: 5px solid #D5431E;
     border-radius: 20px;
     position: relative;
-    scroll-behavior: smooth;
     overflow-y: scroll;
 }
 
