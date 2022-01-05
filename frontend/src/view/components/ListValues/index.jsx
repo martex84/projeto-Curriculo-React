@@ -15,7 +15,7 @@ function ListValues(object) {
         <div className="c-list-values" aria-label='c-list-values'>
             <div className="c-list-valuse__c-internal">
                 <button aria-label='closeButton' className="button-list-values button-list-values--head" onClick={() => alterationStyleListValues()}>
-                    <MdClose />
+                    <MdClose className="button-list-values__svg" />
                 </button>
                 <h2 className="c-list-values__title">
                     {object.nameList}
@@ -29,8 +29,6 @@ function ListValues(object) {
 
                                 const listPropried = internalList[`${data}`];
 
-                                console.log(`${listPropried[`${arrayObjeto[0]}`]}`);
-
                                 return (
                                     <li key={index} aria-label="doubleList" className="ul-list-internal__list-item ul-list-iternernal__list-item--double">
                                         <div className="ul-list-internal__header">
@@ -38,7 +36,7 @@ function ListValues(object) {
                                                 {listPropried[`${arrayObjeto[0]}`]}
                                             </label>
                                             <button className="button-list-values">
-                                                <MdDeleteForever />
+                                                <MdDeleteForever className="button-list-values__svg" />
                                             </button>
                                         </div>
                                         <p>
@@ -50,9 +48,12 @@ function ListValues(object) {
 
                             return (
                                 <li key={index} aria-label="unitList" className="ul-list-internal__list-item ul-list-iternernal__list-item--unit">
-                                    <p>
-                                        {data[`${internalList[`${data}`]}`]}
+                                    <p className='ul-list-iternernal__paragraph--unit'>
+                                        {internalList[`${data}`]}
                                     </p>
+                                    <button className="button-list-values button-list-values--unit">
+                                        <MdDeleteForever className="button-list-values__svg" />
+                                    </button>
                                 </li>
                             )
                         })
