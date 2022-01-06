@@ -104,6 +104,10 @@ function MenuSystem() {
                             </label>
                             <input type="text" placeholder="Digite seu nome" className="c-information-menu__input c-information-menu__input--personal-information" />
                             <label className="c-information-menu__label">
+                                Cargo
+                            </label>
+                            <input type="text" placeholder="Digite o cargo desejado" className="c-information-menu__input c-information-menu__input--personal-information" />
+                            <label className="c-information-menu__label">
                                 Cidade
                             </label>
                             <input type="text" placeholder="Digite sua cidade" className="c-information-menu__input c-information-menu__input--personal-information" />

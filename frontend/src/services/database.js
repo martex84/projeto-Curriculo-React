@@ -1,6 +1,7 @@
 export default {
     informacaoPessoal: {
         name: "Marcelo",
+        cargo: "Desenvolvedor",
         cidade: "Scp",
         estado: "Sp",
         telefone: "00000000",

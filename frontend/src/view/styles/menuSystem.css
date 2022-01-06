@@ -47,7 +47,7 @@
 .c-information-menu {
     width: 375px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     background-color: #ffff;
     border: 5px solid #D5431E;
     border-radius: 20px;
@@ -83,7 +83,7 @@
 }
 
 .c-information-menu__input--personal-information {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .c-information-menu__input--text-area {
@@ -106,7 +106,7 @@
 }
 
 .c-secundario-menu__group:first-child .c-information-menu {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width:818px) {
