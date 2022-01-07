@@ -31,8 +31,8 @@ function MenuSystem() {
             nameLanguages: "",
             languageLevel: ""
         },
-        abilities: [],
-        profissionalQualifications: []
+        abilities: "",
+        profissionalQualifications: ""
     })
     const [objetoReturnListValues, setObjetoReturnListValues] = useState();
     const [showListValues, setShowListValues] = useState(false);
@@ -155,6 +155,38 @@ function MenuSystem() {
             case "personalInformationLinkedin":
                 objectInternal.personalInformation.linkedin = value;
                 break;
+
+            case "profissionalExperienceCompanyName":
+                objectInternal.profissionalExperience.companyName = value;
+                break;
+
+            case "profissionalExperienceCompanyExperience":
+                objectInternal.profissionalExperience.experience = value;
+                break;
+
+            case "CompletCoursesName":
+                objectInternal.completeCourses.courseName = value;
+                break;
+
+            case "CompletCoursesInstitutionName":
+                objectInternal.completeCourses.institutionName = value;
+                break;
+
+            case "LanguagesName":
+                objectInternal.languages.nameLanguages = value;
+                break;
+
+            case "LanguagesLanguageLevel":
+                objectInternal.languages.languageLevel = value;
+                break;
+
+            case "LanguagesLanguageLevel":
+                objectInternal.abilities = value;
+                break;
+
+            case "ProfissionalQualifications":
+                objectInternal.profissionalQualifications = value;
+                break;
         }
 
         setObjetoInternalValues(objectInternal);
@@ -176,13 +208,12 @@ function MenuSystem() {
     useEffect(() => {
 
         if (localStorageVerified[1] === false && localStorageVerified[0] === true) {
-            setObjetoInternalValues(localStorageSystem.getLocalStorage());
+            setObjetoInternalValues({ ...objectInternalValues, personalInformation: localStorageSystem.getLocalStorage().personalInformation });
 
             setLocalStorageVerified([true, true]);
         }
     }, [localStorageVerified])
 
-    useEffect(() => { console.log(objectInternalValues.personalInformation.name) }, [objectInternalValues])
     return (
         <>
             <section id="c-menu-system">
@@ -250,14 +281,17 @@ function MenuSystem() {
                             <h2 className="c-information-menu__title">
                                 Experiência Profissionais
                             </h2>
+
                             <label className="c-information-menu__label">
                                 Nome da Empresa
                             </label>
-                            <input type="text" placeholder="Digite o nome da empresa" className="c-information-menu__input" />
+                            <input type="text" placeholder="Digite o nome da empresa" className="c-information-menu__input" onChange={(event) => saveObjetoReturnListValues("profissionalExperienceCompanyName", event.target.value)} value={objectInternalValues.profissionalExperience.companyName} />
+
                             <label className="c-information-menu__label">
                                 Descrição da Experiência
                             </label>
-                            <textarea placeholder="Digite a experiência" className="c-information-menu__input c-information-menu__input--text-area" />
+                            <textarea placeholder="Digite a experiência" className="c-information-menu__input c-information-menu__input--text-area" onChange={(event) => saveObjetoReturnListValues("profissionalExperienceCompanyExperience", event.target.value)} value={objectInternalValues.profissionalExperience.experience} />
+
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('experience')}>Visualizar lista</button>
                                 <button className="button-system" onClick={() => includeLocalStorage('personalInformation')}>Adicionar</button>
@@ -273,14 +307,17 @@ function MenuSystem() {
                             <h2 className="c-information-menu__title">
                                 Cursos Realizados
                             </h2>
+
                             <label className="c-information-menu__label">
                                 Nome do Curso
                             </label>
-                            <input type="text" placeholder="Digite o nome do curso" className="c-information-menu__input" />
+                            <input type="text" placeholder="Digite o nome do curso" className="c-information-menu__input" onChange={(event) => saveObjetoReturnListValues("CompletCoursesName", event.target.value)} value={objectInternalValues.completeCourses.courseName} />
+
                             <label className="c-information-menu__label">
                                 Nome da Instituição
                             </label>
-                            <input type="text" placeholder="Digite o nome da instituição" className="c-information-menu__input" />
+                            <input type="text" placeholder="Digite o nome da instituição" className="c-information-menu__input" onChange={(event) => saveObjetoReturnListValues("CompletCoursesInstitutionName", event.target.value)} value={objectInternalValues.profissionalExperience.institutionName} />
+
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues("course")}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
@@ -292,14 +329,17 @@ function MenuSystem() {
                             <h2 className="c-information-menu__title">
                                 Idiomas Falados
                             </h2>
+
                             <label className="c-information-menu__label">
                                 Nome do Idioma
                             </label>
-                            <input type="text" placeholder="Digite o nome do curso" className="c-information-menu__input" />
+                            <input type="text" placeholder="Digite o nome do curso" className="c-information-menu__input" onChange={(event) => saveObjetoReturnListValues("LanguagesName", event.target.value)} value={objectInternalValues.languages.name} />
+
                             <label className="c-information-menu__label">
                                 Nível do Idioma
                             </label>
-                            <input type="text" placeholder="Digite o nível do idioma" className="c-information-menu__input" />
+                            <input type="text" placeholder="Digite o nível do idioma" className="c-information-menu__input" onChange={(event) => saveObjetoReturnListValues("LanguagesLanguageLevel", event.target.value)} value={objectInternalValues.languages.languageLevel} />
+
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('languages')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
@@ -315,6 +355,7 @@ function MenuSystem() {
                                 Tipo de Habilidade
                             </label>
                             <input type="text" placeholder="Digite o tipo da habilidade" className="c-information-menu__input" />
+
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('ability')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
@@ -326,14 +367,12 @@ function MenuSystem() {
                             <h2 className="c-information-menu__title">
                                 Qualificações Profissionais
                             </h2>
-                            <label className="c-information-menu__label">
-                                Qualificação Profissional
-                            </label>
-                            <input type="text" placeholder="Digite o nome da empresa" className="c-information-menu__input" />
+
                             <label className="c-information-menu__label">
                                 Descrição da Qualificação
                             </label>
-                            <textarea placeholder="Digite a qualificação" className="c-information-menu__input c-information-menu__input--text-area" />
+                            <textarea placeholder="Digite a qualificação" className="c-information-menu__input c-information-menu__input--text-area" onChange={(event) => saveObjetoReturnListValues("ProfissionalQualifications", event.target.value)} value={objectInternalValues.profissionalQualifications} />
+
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('qualification')}>Visualizar lista</button>
                                 <button className="button-system">Adicionar</button>
