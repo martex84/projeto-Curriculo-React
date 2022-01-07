@@ -180,9 +180,10 @@ function MenuSystem() {
                 objectInternal.languages.languageLevel = value;
                 break;
 
-            case "LanguagesLanguageLevel":
+            case "Abilities":
                 objectInternal.abilities = value;
                 break;
+
 
             case "ProfissionalQualifications":
                 objectInternal.profissionalQualifications = value;
@@ -193,14 +194,31 @@ function MenuSystem() {
     }
 
     function includeLocalStorage(type) {
+
         switch (type) {
             case "personalInformation":
-                localStorageSystem.includeField("personalInformation", objectInternalValues.personalInformation)
+                localStorageSystem.includeField(type, objectInternalValues.personalInformation)
 
                 break;
 
             case "profissionalExperience":
-                localStorageSystem.includeField("profissionalExperience", "Teste Experiencia")
+                localStorageSystem.includeField(type, objectInternalValues.personalInformation)
+                break;
+
+            case "completeCourses":
+                localStorageSystem.includeField(type, objectInternalValues.completeCourses)
+                break;
+
+            case "languages":
+                localStorageSystem.includeField(type, objectInternalValues.languages)
+                break;
+
+            case "abilities":
+                localStorageSystem.includeField(type, objectInternalValues.abilities)
+                break;
+
+            case "profissionalQualifications":
+                localStorageSystem.includeField(type, objectInternalValues.profissionalQualifications)
                 break;
         }
     }
@@ -294,7 +312,7 @@ function MenuSystem() {
 
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('experience')}>Visualizar lista</button>
-                                <button className="button-system" onClick={() => includeLocalStorage('personalInformation')}>Adicionar</button>
+                                <button className="button-system" onClick={() => includeLocalStorage('profissionalExperience')}>Adicionar</button>
                             </div>
                         </div>
                     </div>
@@ -320,7 +338,7 @@ function MenuSystem() {
 
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues("course")}>Visualizar lista</button>
-                                <button className="button-system">Adicionar</button>
+                                <button className="button-system" onClick={() => includeLocalStorage('completeCourses')}>Adicionar</button>
                             </div>
                         </div>
 
@@ -342,7 +360,7 @@ function MenuSystem() {
 
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('languages')}>Visualizar lista</button>
-                                <button className="button-system">Adicionar</button>
+                                <button className="button-system" onClick={() => includeLocalStorage('languages')}>Adicionar</button>
                             </div>
                         </div>
 
@@ -354,11 +372,11 @@ function MenuSystem() {
                             <label className="c-information-menu__label">
                                 Tipo de Habilidade
                             </label>
-                            <input type="text" placeholder="Digite o tipo da habilidade" className="c-information-menu__input" />
+                            <input type="text" placeholder="Digite o tipo da habilidade" className="c-information-menu__input" onChange={(event) => saveObjetoReturnListValues("Abilities", event.target.value)} value={objectInternalValues.abilities} />
 
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('ability')}>Visualizar lista</button>
-                                <button className="button-system">Adicionar</button>
+                                <button className="button-system" onClick={() => includeLocalStorage('abilities')}>Adicionar</button>
                             </div>
                         </div>
 
@@ -375,7 +393,7 @@ function MenuSystem() {
 
                             <div className="c-information-menu-button">
                                 <button aria-label="buttonOpenList" className="button-system" onClick={() => openListValues('qualification')}>Visualizar lista</button>
-                                <button className="button-system">Adicionar</button>
+                                <button className="button-system" onClick={() => includeLocalStorage('profissionalQualifications')}>Adicionar</button>
                             </div>
                         </div>
                     </div>
