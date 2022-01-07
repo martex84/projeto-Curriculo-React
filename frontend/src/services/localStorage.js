@@ -44,7 +44,7 @@ function createLocalStorage() {
 
 function checkLocalStorage() {
     if (!localStorage.getItem(nameLocalStorage)) {
-        debugger
+
         return false
     }
 
