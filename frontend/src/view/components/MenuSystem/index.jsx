@@ -121,12 +121,11 @@ function MenuSystem() {
     }
 
     function saveObjetoReturnListValues(type, value) {
-        console.log(objectInternalValues);
-        let objectInternal = objectInternalValues;
+        let objectInternal = Object.assign({}, objectInternalValues);
 
         switch (type) {
             case "personalInformationName":
-                setObjetoInternalValues({ ...objectInternal, personalInformation: { name: value } })
+                objectInternal.personalInformation.name = value;
                 break;
 
             case "personalInformationJob":
@@ -157,7 +156,6 @@ function MenuSystem() {
                 objectInternal.personalInformation.linkedin = value;
                 break;
         }
-        console.log(objectInternal, value);
 
         setObjetoInternalValues(objectInternal);
     }
