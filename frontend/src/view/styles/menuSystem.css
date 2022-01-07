@@ -1,0 +1,151 @@
+/**
+* 1.0 Containers Principais
+* 
+* Agrupamento dos Containers Principais
+*/
+#c-menu-system {
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-menu-system__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.c-secundario-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.c-secundario-menu__group:first-child {
+    margin-right: 50px;
+}
+
+@media screen and (max-width:818px) {
+    .c-secundario-menu {
+        flex-direction: column;
+    }
+
+    .c-secundario-menu__group:first-child {
+        margin: 0;
+    }
+}
+
+/**
+* 2.0 Container Menu
+* 
+* Componentes do Container Menu
+*/
+
+.c-information-menu {
+    width: 375px;
+    padding: 10px;
+    margin-bottom: 11px;
+    background-color: #ffff;
+    border: 5px solid #D5431E;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c-information-menu:last-child {
+    margin-bottom: 0;
+}
+
+.c-information-menu__title {
+    margin-bottom: 20px;
+    color: #18335E;
+    align-self: center;
+}
+
+.c-information-menu__label {
+    color: #D5431E;
+    justify-self: flex-start;
+}
+
+.c-information-menu__input {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    background-color: #18335E;
+    border: 3px solid #18335E;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.c-information-menu__input--personal-information {
+    margin-bottom: 18px;
+}
+
+.c-information-menu__input--text-area {
+    padding-top: 5px;
+    height: 100px;
+    resize: none;
+}
+
+.c-information-menu__input::placeholder {
+    color: #fff;
+    opacity: 50%;
+}
+
+.c-information-menu-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.c-secundario-menu__group:first-child .c-information-menu {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:818px) {
+    .c-secundario-menu__group:first-child .c-information-menu {
+        margin-bottom: 10px;
+    }
+}
+
+/**
+* 3.0 Buttom System
+* 
+* Botões do sistema
+*/
+
+.button-system {
+    width: 120px;
+    height: 30px;
+    background-color: #18335E;
+    color: #ffff;
+    border: 3px solid #18335E;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.button-system:hover {
+    color: #D5431E;
+    border: 3px solid #D5431E;
+    cursor: pointer;
+}
+
+.button-system--big {
+    width: 300px;
+}
+
+.button-system--center {
+    margin: auto;
+}
+
+.button-system--main {
+    width: 200px;
+    height: 50px;
+}

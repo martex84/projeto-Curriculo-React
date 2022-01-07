@@ -1,0 +1,124 @@
+/**
+* 1.0 Main Container List Value
+* 
+* Section with function change elements and block of Main Container
+*/
+.c-list-values {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(169, 169, 169, 0.9);
+}
+
+.c-list-valuse__c-internal {
+    height: 100vh;
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border: 5px solid #D5431E;
+    border-radius: 5px;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.c-list-values__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width:800px) {
+    .c-list-valuse__c-internal {
+        width: 350px;
+    }
+
+    .c-list-values__title {
+        font-size: 1.2em;
+    }
+}
+
+/**
+* 2.0 Container List of List Values
+* 
+* Container with function for charge elements and blocks of Container List
+*/
+
+.ul-list-internal {
+    list-style: none;
+}
+
+.ul-list-internal__list-item {
+    margin-bottom: 20px;
+}
+
+.ul-list-internal__list-item p {
+    padding: 10px;
+    background-color: #18335E;
+    color: #ffff;
+    border-radius: 5px;
+}
+
+.ul-list-internal__list-item label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ul-list-internal__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul-list-iternernal__list-item--double>.ul-list-internal__header>label {
+    color: #D5431E;
+}
+
+.ul-list-iternernal__list-item--unit {
+    display: flex;
+    flex-direction: row;
+}
+
+.ul-list-iternernal__paragraph--unit {
+    width: 100%;
+    min-height: 40px;
+}
+
+
+
+/**
+* 2.0 Container Buttons of List Values
+* 
+* Container with function for charge elements and blocks of Container Buttons
+*/
+
+.button-list-values {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: transparent;
+    color: #8B0000;
+}
+
+.button-list-values:hover {
+    color: #18335E;
+    cursor: pointer;
+}
+
+.button-list-values--head {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.button-list-values--unit {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.button-list-values__svg {
+    width: 100%;
+    height: 100%;
+}
